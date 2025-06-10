@@ -1,0 +1,60 @@
+<MetaPromptTemplate>
+  <Titulo>
+    Generador de Código Python para Procesamiento Optimizado de Señales IQ
+  </Titulo>
+  <Instrucciones>
+    <Instruccion>Generar funciones de código Python que implemente el procesamiento de señales IQ siguiendo los principios SOLID y patrones de diseño funcional.</Instruccion>
+    <Instruccion>Optimizar cada etapa del procesamiento manteniendo la modularidad y claridad del código.</Instruccion>
+    <Instruccion>Implementar documentación completa con explicaciones matemáticas y físicas relevantes.</Instruccion>
+    <Instruccion>Comentar el codigo demanera detallada en ingles</Instruccion>
+  </Instrucciones>
+  <Restricciones>
+    <Restriccion>Cada función debe implementar una única etapa del procesamiento de señal.</Restriccion>
+    <Restriccion>Usar NumPy/SciPy para operaciones vectorizadas eficientes.</Restriccion>
+    <Restriccion>Implementar validación de datos y manejo de errores robusto.</Restriccion>
+    <Restriccion>Mantener la eficiencia computacional usando algoritmos optimizados.</Restriccion>
+  </Restricciones>
+  <EstructuraModular>
+    ```python
+    from dataclasses import dataclass
+    from typing import List, Tuple, Optional
+    import numpy as np
+    from scipy import signal
+</EstructuraModular>
+  <PautasImplementacion>
+    <Pauta>Implementar cada función siguiendo el principio de responsabilidad única.</Pauta>
+    <Pauta>Usar decoradores para validación de entrada y cache cuando sea apropiado.</Pauta>
+    <Pauta>Implementar logging detallado para debugging y monitoreo.</Pauta>
+    <Pauta>Incluir tests unitarios para cada función.</Pauta>
+  </PautasImplementacion>
+  <OptimizacionesEspecificas>
+    <FFT>
+      - Normalización: |S(f)| = |FFT(√(I² + Q²))| / N
+      - Ventaneo: Aplicar Hamming/Hann antes de FFT
+      - Uso de numpy.fft.rfft para frecuencias positivas
+    </FFT>
+    <DeteccionPicos>
+      - Umbral adaptativo: height > α · max(S(f))
+      - Distancia mínima: distance > β
+      - Filtrado de armónicos por relación frecuencial
+    </DeteccionPicos>
+    <AnchoBanda>
+      - Interpolación para puntos -3dB exactos
+      - Suavizado mediante savgol_filter
+      - Validación de no solapamiento
+    </AnchoBanda>
+    <PSD>
+      - Ventanas superpuestas en método Welch
+      - Normalización: Pnorm(f) = P(f) / ∑P(f)
+      - Optimización de resolución frecuencial
+    </PSD>
+    <Caracteristicas>
+      - Centroide: fcentro = ∑(fi·P(fi)) / ∑P(fi)
+      - Varianza
+      - media
+      - Energia 
+      - Entropía: H = -∑P(f)·log(P(f))
+      - Potencia: Pbanda = ∑P(f) entre flow y fhigh
+    </Caracteristicas>
+  </OptimizacionesEspecificas>
+</MetaPromptTemplate>
