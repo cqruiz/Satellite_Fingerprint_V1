@@ -176,4 +176,36 @@ Once you have the PID, use the kill command to terminate the process gracefully:
 kill PID
 ```
 
+# ABOUT THE GIT
+
+Flujo de trabajo completo
+```
+git checkout main
+git pull origin main
+```
+
+[Trabaja en tu proyecto]
+
+```
+git add .
+git commit -m "Mensaje descriptivo"
+git push origin main
+```
+## Programa automatico git
+Hay un codigo que automatiza el flujo de trabajo completo
+
+Instrucciones de uso
+
+1. Dar permisos de ejecución en la terminal :
+
+```
+chmod +x update_git.sh
+```
+
+2. Colócalo en la raíz de tu proyecto (donde está tu .git/).
+3. Cada vez que quieras actualizar y subir cambios, ejecútalo así:
+
+```
+./update_git.sh "Describe brevemente lo que has cambiado"
+```
 
