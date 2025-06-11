@@ -86,7 +86,7 @@ if __name__ == "__main__":
     directorio_destino = "./datos_extraidos"  # Donde se guardarán los archivos extraídos
     
     # Si quieres extraer todos los archivos en un solo directorio, cambia a True
-    extraer_todo_junto = False
+    extraer_todo_junto = True
     
     # Ejecutar la función de extracción
     extraer_archivos_targz(directorio_origen, directorio_destino, extraer_todo_junto)
